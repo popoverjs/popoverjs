@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Popover.js</title>
+    <meta name="description" content="Popover.js - A simple, light weight popover plugin">
+    <meta name="author" content="Surendranath Reddy &lt;gsrgsr7@.com&gt;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="stylesheet" href="css/app.css">
+    <link href="http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800" rel="stylesheet" type="text/css">
+    <!--if lt IE 9
+    script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    -->
+  </head>
+  <body>
+    <div class="main container">
+      <div class="eight columns">
+        <h1 class="title">Popover.js</h1>
+      </div>
+      <hr>
+      <div class="eight columns summary">
+        <h3>Summary</h3>
+        <p>
+          Popover.js is a jQuery plugin to provide simple yet fully customisable Popover.
+          The javascript code snippets in this documentation with the <code>green</code> edge are runnable by clicking them.
+        </p>
+        <p>
+      </div>
+
+      <div class="sixteen columns">
+        <h3>Basic Usage</h3>
+      </div>
+      <div class="eight columns">
+        <h4>Simple Popover</h4>
+        <p>You can place popover on any element:</p>
+        <p>
+          <pre class="prettyprint runnable" id="f1">$('#example').fu_popover(options)</pre>
+        </p>
+      </div>
+
+      <div class="sixteen columns">
+        <h4>Popover Examples</h4>
+        <p>
+          Below are some examples of popover,click them to run.
+
+        </p>
+        <div><span>Basic Popover</span>
+          <pre class="prettyprint runnable indent1" id="d1">$('#example').fu_popover({content:'Hello !',placement:'left'});</pre><span>Popover with Header</span>
+          <pre class="prettyprint runnable indent1" id="d2">$('#example').fu_popover({content:'Hello !',placement:'top',title:'Alert'});</pre><span>Popover with simple content</span>
+          <pre class="prettyprint runnable indent1" id="d3">$('#example').fu_popover({content:'Hello !',placement:'left'});</pre><span>Popover with Html Content</span>
+          <pre class="prettyprint runnable indent1" id="d4">$('#example').fu_popover({content:'&lt;p&gt; Are you sure ?&lt;/p&gt; &lt;div&gt;...',placement:'top',title:'Alert'})</pre>
+        </div>
+      </div>
+      <div id="position" class="sixteen columns">
+        <h3>Positioning</h3>
+        <p>
+          The <code>placement</code> string option is used to describe both vertical and horizontal alignment.
+          Element notifications can be vertically repositioned to: <code>"top"</code> or <code>"bottom" </code>and horozontally repositioned to: <code>"left"</code> or <code>"right"</code>. If we don't provide a <code>placement</code> option the default alignment is
+          <code>bottom</code>.
+        </p>
+        <p>
+          <pre class="prettyprint runnable" onclick="placeAroundBox()">$("#pos-demo").fu_popover({
+  content:"I'm to the right of this box",
+  placement:"right"
+});</pre>
+        </p>
+        <p class="center">We can position the notification around this <span class="box pos-demo" id="pos-demo">box</span></p>
+        <p style="padding-top: 30px">Use this positioning tool to see all possible <code>position</code> combinations.</p>
+
+        <div style="margin-left: 60px">
+          <input data-thickness=".3" data-width="100" data-height="100" data-max="4" data-cursor="true" data-fgColor="#080" data-displayInput="false" data-angleOffset="0" data-linecap="round" class="pos-chooser">
+        </div>
+        <p class="center"><span>An awesome cool </span><span class="box pos-chooser-demo" id="large_box">larrrggggeeee box</span></p>
+      </div>
+      <div class="sixteen columns">
+        <h3>API</h3>
+        <div class="entry">
+          <h5><code class="black">$("<code>#elem-id</code>").fu_popover(object);</code></h5>
+          <p class="indent1"><code>object</code> - an options object </p>
+        </div>
+        <div class="entry">
+          <h5><code class="black">$("<code>#elem-id</code>").fu_popover(<code>"show"</code>);</code></h5>
+          <p class="indent1"><code>show</code> - Reveals an element popover </p>
+        </div>
+        <div class="entry">
+          <h5><code class="black">$("<code>#elem-id</code>").fu_popover(<code>"hide"</code>);</code></h5>
+          <p class="indent1"><code>hide</code> - Hides an element popover </p>
+        </div>
+        <div class="entry">
+          <h5><code class="black">$("<code>#elem-id</code>").fu_popover(<code>"destroy"</code>);</code></h5>
+          <p class="indent1"><code>show</code> - Hides and destroys an element popover </p>
+        </div>
+      </div>
+      <div class="sixteen columns">
+        <h3>Options</h3>
+        <h6>Options can be passed using JavaScript.</h6>
+        <br>
+        <table class="table table-bordered table-striped js-options-table js-options-table">
+          <thead>
+          <tr style="font-weight:bold">
+            <th style='width:15%'>Name</th>
+            <th style='width:15%'>Type</th>
+            <th style='width:15%'>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>arrowShow</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>If set to <code>false</code> hides popover arrow.
+          </tr>
+          <tr>
+            <td>autoHide</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>If set to <code>true</code> hides popover automatically after <code>2500</code> milli seconds.
+          </tr>
+          <tr>
+            <td>autoHideDelay</td>
+            <td>number</td>
+            <td>2500</td>
+            <td>If <code>autoHide</code> is set to <code>true</code>, hide popover after <code>autoHideDelay</code> ms.</td>
+          </tr>
+          <tr>
+            <td>content</td>
+            <td>string</td>
+            <td>''</td>
+            <td>Content to display on popover,can be any string or html content.</td>
+          </tr>
+          <tr>
+            <td>delay</td>
+            <td>object</td>
+            <td>0</td>
+            <td>Delay showing and hiding the popover (ms)<br>
+              Object structure is: <code>delay: { "show": 500, "hide": 100 }</code></td>
+          </tr>
+          <tr>
+            <td>dismissable</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>If set to <code>true</code> hides popover on clicking outside popover.</td>
+          </tr>
+          <tr>
+            <td>placement</td>
+            <td>string</td>
+            <td>'bottom'</td>
+            <td>How to position the popover - top | bottom | left | right </td>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td>string</td>
+            <td>''</td>
+            <td>Title to set for popover</td>
+          </tr>
+          <tr>
+            <td>trigger</td>
+            <td>string</td>
+            <td>'click'</td>
+            <td>How popover is triggered - <code>click | hover | focus | manual</code>. You may pass multiple triggers; separate them with a space. manual cannot be combined with any other trigger.</td>
+          </tr>
+          <tr>
+            <td>width</td>
+            <td>string</td>
+            <td>'250px'</td>
+            <td>You can specify any width type supported by css(<code>% or px or pt</code> etc).</td>
+          </tr>
+        </tbody>
+        </table>
+
+      </div>
+
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="js/jquery.knob.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/popover.min.js"></script>
+    <script>
+
+    prettyPrint();
+
+    $("#f1").fu_popover({
+      autoHide:true,
+      content:'<h5>Hello !</h5>',
+      dismissable:true,
+      placement:'right'
+    });
+
+    $("#d1").fu_popover({
+      content:'Hello !',
+      dismissable:true,
+      placement:'left'
+    });
+
+    $("#d2").fu_popover({
+      content:'Hello ! Iam popover with header.',
+      dismissable:true,
+      placement:'top',
+      title:'Alert',
+      width:'200px'
+    });
+
+    $("#d3").fu_popover({
+      content:'Hello ! Iam simple text',
+      dismissable:true,
+      placement:'left',
+    });
+
+    $("#d4").fu_popover({
+      content:'<p style="text-align:center;margin-bottom:5px">Are you sure ?</p><div style="text-align:center"><button style="margin-bottom:0px;background:#ee2b17;color:#fff">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;<button style="margin-bottom:10px;background:#35af45;color:#fff">Cancel</button></div>',
+      dismissable:true,
+      placement:'top',
+      title:'Alert',
+      width:'210px'
+    });
+
+
+      $("#pos-demo").fu_popover({
+        content:"I'm to the right of this box",
+        placement:"right"
+      });
+
+      //
+
+  function placeAroundBox(){
+    $("#pos-demo").fu_popover("show");
+  }
+
+      // //async fonts
+      WebFontConfig = { google: { families: [ 'Droid+Sans+Mono::latin' ] } };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+
+    </script>
+  </body>
+</html>
