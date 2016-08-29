@@ -1,0 +1,33 @@
+{
+  "name": "popoverjs",
+  "title": "jQuery popoverjs",
+  "description": "Popover.js is a jQuery plugin to provide simple yet fully customisable Popover.",
+  "keywords": [
+    "jquery-plugins",
+    "popoverjs"
+  ],
+  "version": "1.1-beta",
+  "author": {
+    "name": "Surendranath Reddy",
+    "url": "https://github.com/surendranath-reddy"
+  },
+  "maintainers": [
+    {
+      "name": "Surendranath Reddy",
+      "url": "https://github.com/surendranath-reddy"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/popoverjs/popoverjs/issues",
+  "homepage": "http://gsreddy.in/popover/",
+  "docs": "http://gsreddy.in/popover/",
+  "download": "https://raw.githubusercontent.com/popoverjs/popoverjs/master/dist/popover.min.js",
+  "dependencies": {
+    "jquery": ">=1.4"
+  }
+}
