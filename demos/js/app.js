@@ -170,6 +170,31 @@ $(document).ready(function(){
     getStyles();
   });
 
+  $('#headerBottomColor').colorPicker({
+  GPU: true, // use transform: translate3d or regular rendereing (top, left)
+  renderCallback: function($elm, toggled) {
+
+    var colors = this.color.colors;
+
+    if (toggled === true) {
+      $("#headerBottomColor").val("#"+colors.HEX);
+    } else if (toggled === false) {
+      $("#headerBottomColor").val("#"+colors.HEX);
+    }
+    else{
+      $("#headerBottomColor").val("#"+colors.HEX);
+      $(".fu_popover_header_Theme_red").css("border-bottom-color","#"+colors.HEX);
+    }
+  }
+
+  });
+
+  $("#headerBottomColor").focusout(function(){
+    headerBottomColor = $(this).val();
+    $(".fu_popover_header_Theme_red").css("border-bottom-color",headerBottomColor);
+    getStyles();
+  });
+
   $('#headerTextColor').colorPicker({
   GPU: true, // use transform: translate3d or regular rendereing (top, left)
   renderCallback: function($elm, toggled) {
@@ -284,7 +309,7 @@ function changeBorderRadius(newValue){
 function getStyles(){
 
   var str ='.fu_popover_'+themeName+' {\n   position: absolute;\n   background: '+bodyColor+';\n   z-index: 1060;\n   -webkit-background-clip: padding-box;\n   background-clip: padding-box;\n   border: 1px solid '+borderColor+';\n   border-radius: '+borderRadius+'px;\n   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);\n   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);\n}';
-  str+='\n.fu_popover_header_'+themeName+'{\n   margin: 0;\n   padding: 8px 14px;\n   font-size: 14px;\n   text-align: center;\n   color:'+headerTextColor+';\n   background-color: '+headerColor+';\n   border-bottom: 1px solid #ebebeb;\n   border-radius: '+borderRadius+'px '+borderRadius+'px 0 0;\n}\n.fu_popover_content_'+themeName+'{\n   padding: 9px 14px;\n}';
+  str+='\n.fu_popover_header_'+themeName+'{\n   margin: 0;\n   padding: 8px 14px;\n   font-size: 14px;\n   text-align: center;\n   color:'+headerTextColor+';\n   background-color: '+headerColor+';\n   border-bottom: 1px solid '+headerBottomColor+';\n   border-radius: '+borderRadius+'px '+borderRadius+'px 0 0;\n}\n.fu_popover_content_'+themeName+'{\n   padding: 9px 14px;\n}';
   str+='\n.fu_popover_'+themeName+':after, .fu_popover_'+themeName+':before {\n   border: solid transparent;\n   content: " ";\n   height: 0;\n   width: 0;\n   position: absolute;\n   pointer-events: none;\n}\n.fu_popover_'+themeName+':after {\n   border-color: rgba(255, 255, 255, 0);\n   border-width: 10px;\n}\n.fu_popover_'+themeName+':before {\n   border-color: rgba(0, 0, 0, 0);\n   border-width: 11px;\n}';
 
   str+='\n.arrow_top_'+themeName+':after{\n   left: 50%;\n   bottom: 100%;\n   border-bottom-color: '+arrowColor+';\n   margin-left: -10px;\n}\n.arrow_top_'+themeName+':before{\n   left: 50%;\n   bottom: 100%;\n   border-bottom-color: '+borderColor+';\n   margin-left: -11px;\n}';
