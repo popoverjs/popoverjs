@@ -12,12 +12,198 @@
     <!--if lt IE 9
     script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     -->
+    <style>
+    .fu_popover_Theme_blue {
+   position: absolute;
+   background: #E0FAFB;
+   z-index: 1060;
+   -webkit-background-clip: padding-box;
+   background-clip: padding-box;
+   border: 1px solid #69CEDF;
+   border-radius: 17.5px;
+   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.fu_popover_header_Theme_blue{
+   margin: 0;
+   padding: 8px 14px;
+   font-size: 14px;
+   text-align: center;
+   color:#333C3E;
+   background-color: #69CEDF;
+   border-bottom: 1px solid #ebebeb;
+   border-radius: 17.5px 17.5px 0 0;
+}
+.fu_popover_content_Theme_blue{
+   padding: 9px 14px;
+}
+.fu_popover_Theme_blue:after, .fu_popover_Theme_blue:before {
+   border: solid transparent;
+   content: " ";
+   height: 0;
+   width: 0;
+   position: absolute;
+   pointer-events: none;
+}
+.fu_popover_Theme_blue:after {
+   border-color: rgba(255, 255, 255, 0);
+   border-width: 10px;
+}
+.fu_popover_Theme_blue:before {
+   border-color: rgba(0, 0, 0, 0);
+   border-width: 11px;
+}
+.arrow_top_Theme_blue:after{
+   left: 50%;
+   bottom: 100%;
+   border-bottom-color: #E0FAFB;
+   margin-left: -10px;
+}
+.arrow_top_Theme_blue:before{
+   left: 50%;
+   bottom: 100%;
+   border-bottom-color: #69CEDF;
+   margin-left: -11px;
+}
+.arrow_bottom_Theme_blue:after{
+   left: 50%;
+   top: 100%;
+   border-top-color: #E0FAFB;
+   margin-left: -10px;
+}
+.arrow_bottom_Theme_blue:before{
+   left: 50%;
+   top: 100%;
+   border-top-color: #69CEDF;
+   margin-left: -11px;
+}
+.arrow_left_Theme_blue:after{
+   right: 100%;
+   top: 50%;
+   border-right-color: #E0FAFB;
+   margin-top: -10px;
+}
+.arrow_left_Theme_blue:before{
+   right: 100%;
+   top: 50%;
+   border-right-color: #69CEDF;
+   margin-top: -11px;
+}
+.arrow_right_Theme_blue:after{
+   left: 100%;
+   top: 50%;
+   border-left-color: #E0FAFB;
+   margin-top: -10px;
+}
+.arrow_right_Theme_blue:before{
+   left: 100%;
+   top: 50%;
+   border-left-color: #69CEDF;
+   margin-top: -11px;
+}
+
+.fu_popover_Theme_red {
+   position: absolute;
+   background: #F3AFAF;
+   z-index: 1060;
+   -webkit-background-clip: padding-box;
+   background-clip: padding-box;
+   border: 1px solid #F3AFAF;
+   border-radius: 8px;
+   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.fu_popover_header_Theme_red{
+   margin: 0;
+   padding: 8px 14px;
+   font-size: 14px;
+   text-align: center;
+   color:#FFFFFF;
+   background-color: #ED5D5D;
+   border-bottom: 1px solid #ED5D5D;
+   border-radius: 8px 8px 0 0;
+}
+.fu_popover_content_Theme_red{
+   padding: 9px 14px;
+}
+.fu_popover_Theme_red:after, .fu_popover_Theme_red:before {
+   border: solid transparent;
+   content: " ";
+   height: 0;
+   width: 0;
+   position: absolute;
+   pointer-events: none;
+}
+.fu_popover_Theme_red:after {
+   border-color: rgba(255, 255, 255, 0);
+   border-width: 10px;
+}
+.fu_popover_Theme_red:before {
+   border-color: rgba(0, 0, 0, 0);
+   border-width: 11px;
+}
+.arrow_top_Theme_red:after{
+   left: 50%;
+   bottom: 100%;
+   border-bottom-color: #F3AFAF;
+   margin-left: -10px;
+}
+.arrow_top_Theme_red:before{
+   left: 50%;
+   bottom: 100%;
+   border-bottom-color: #F3AFAF;
+   margin-left: -11px;
+}
+.arrow_bottom_Theme_red:after{
+   left: 50%;
+   top: 100%;
+   border-top-color: #F3AFAF;
+   margin-left: -10px;
+}
+.arrow_bottom_Theme_red:before{
+   left: 50%;
+   top: 100%;
+   border-top-color: #F3AFAF;
+   margin-left: -11px;
+}
+.arrow_left_Theme_red:after{
+   right: 100%;
+   top: 50%;
+   border-right-color: #F3AFAF;
+   margin-top: -10px;
+}
+.arrow_left_Theme_red:before{
+   right: 100%;
+   top: 50%;
+   border-right-color: #F3AFAF;
+   margin-top: -11px;
+}
+.arrow_right_Theme_red:after{
+   left: 100%;
+   top: 50%;
+   border-left-color: #F3AFAF;
+   margin-top: -10px;
+}
+.arrow_right_Theme_red:before{
+   left: 100%;
+   top: 50%;
+   border-left-color: #F3AFAF;
+   margin-top: -11px;
+}
+    </style>
   </head>
   <body>
+    <a href="https://github.com/popoverjs/popoverjs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
     <div class="main container">
       <div class="eight columns">
-        <h1 class="title">Popover.js</h1>
+        <h1 class="title" id="title">Popover.js</h1>
       </div>
+      <div class="eight columns right"><span>
+          <iframe src="http://ghbtns.com/github-btn.html?user=popoverjs&amp;repo=popoverjs&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe></span>
+          <script>
+            // !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+          </script></span></div>
       <hr>
       <div class="eight columns summary">
         <h3>Summary</h3>
@@ -26,6 +212,15 @@
           The javascript code snippets in this documentation with the <code>green</code> edge are runnable by clicking them.
         </p>
         <p>
+      </div>
+
+      <div class="eight columns">
+        <h3>Download</h3>
+        <p>Download Popover.js including the pre-made <code>bootstrap styled</code> progress bar.<br>
+          <p><a href="https://raw.githubusercontent.com/popoverjs/popoverjs/master/dist/popover.js" id="download1">
+              <button>Download popover.js</button></a><a href="https://raw.githubusercontent.com/popoverjs/popoverjs/master/dist/popover.min.js" >
+              <button>Download popover.min.js</button></a></p>
+        </p>
       </div>
 
       <div class="sixteen columns">
@@ -96,7 +291,7 @@
         <h3>Options</h3>
         <h6>Options can be passed using JavaScript.</h6>
         <br>
-        <table class="table table-bordered table-striped js-options-table js-options-table">
+        <table class="table table-bordered table-striped js-options-table">
           <thead>
           <tr style="font-weight:bold">
             <th style='width:15%'>Name</th>
@@ -150,6 +345,12 @@
             <td>How to position the popover - top | bottom | left | right </td>
           </tr>
           <tr>
+            <td>themeName</td>
+            <td>string</td>
+            <td>'default'</td>
+            <td>Styles the popup using provided <code>themeName</code>,you can create your own theme using our <code>Theme Roller</code> below. </td>
+          </tr>
+          <tr>
             <td>title</td>
             <td>string</td>
             <td>''</td>
@@ -172,15 +373,142 @@
 
       </div>
 
+
+
+      <div class="sixteen columns">
+        <h3>Theme Roller</h3>
+
+        <div style="float:left;width:50%;">
+          <div style="margin-top:50%;">
+            <p class="center"><span class="box pos-demo" id="box1">box</span></p>
+          </div>
+
+        </div>
+
+        <div style="float:left;width:49%;">
+          <table style="width:100%" class="table table-bordered table-striped js-options-table">
+            <tr>
+              <td>Theme Name</td>
+              <td><input type="text" value="Theme_red" id="themeName" /></td>
+            </tr>
+            <tr>
+              <td>Border Radius:</td>
+              <td>
+                <input type="range" min="0" max="50" value="8" step=".5" onchange="changeBorderRadius(this.value)"/>
+                <span id="border_radius">8</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Border Color:</td>
+              <td>
+                <input type="text" id="borderColor" value="#F3AFAF" style="background-color:#69CEDF">
+              </td>
+            </tr>
+            <tr>
+              <td>Header Color:</td>
+              <td>
+                <input type="text" id="headerColor" value="#ED5D5D" style="background-color:#69CEDF">
+              </td>
+            </tr>
+            <tr>
+              <td>Header Bottom Color:</td>
+              <td>
+                <input type="text" id="headerBottomColor" value="#F3AFAF" style="background-color:#F3AFAF">
+              </td>
+            </tr>
+            <tr>
+              <td>Header Text Color</td>
+              <td>
+                <input type="text" id="headerTextColor" value="#FFFFFF" style="background-color:#FFFFFF">
+              </td>
+            </tr>
+            <tr>
+              <td>Body Color</td>
+              <td>
+                <input type="text" id="bodyColor" value="#F3AFAF" style="background-color:#F3AFAF">
+              </td>
+            </tr>
+            <tr>
+              <td>Arrow Color</td>
+              <td>
+                <input type="text" id="arrowColor" value="#F3AFAF" style="background-color:#F3AFAF">
+              </td>
+            </tr>
+          </table>
+
+
+
+        </div>
+
+      </div>
+
+<div class="sixteen columns">
+  <p>Copy & paste below code into your html head or to your css file & pass this theme name as option to your popover <code>themeName</code>.</p>
+  <textarea cols="100" rows="10" id="finalOutput"></textarea>
+</div>
+
+<div class="sixteen columns">
+  <h4>Example</h4>
+  <p>
+    <pre class="prettyprint runnable" id="theme-demo">$("#theme-demo").fu_popover({
+    content:"Custom theme demo",
+    placement:"top",
+    themeName:'Theme_red',
+    title:'Title'
+});</pre>
+
+</div>
+
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script src="js/jquery.knob.js"></script>
     <script src="js/prettify.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/popover.min.js"></script>
+    <script src="js/jqColorPicker.min.js"></script>
+    <script src="../dist/popover.min.js"></script>
     <script>
 
+
+
     prettyPrint();
+
+
+  $("#box1").fu_popover({
+    content:'<h6>Styling me is not so difficult.</h6>',
+    dismissable:false,
+    placement:'top',
+    themeName:'Theme_red',
+    title:'Title',
+    width:'200px'
+  });
+
+  $("#title").fu_popover({
+    content:'<h6>Hai there !!</h6>',
+    dismissable:false,
+    placement:'top',
+    themeName:'Theme_blue',
+    title:'Hello',
+    width:'200px'
+  });
+
+setTimeout(function(){
+  $("#box1").fu_popover("show");
+  $("#title").fu_popover("show");
+
+// To show the initial theme css in textarea
+  $("#themeName").trigger("focusin");
+  $("#themeName").trigger("focusout");
+
+},2000);
+
+$("#theme-demo").fu_popover({
+  content:'<h6>Custom theme demo</h6>',
+  dismissable:true,
+  placement:'top',
+  themeName:'Theme_red',
+  title:'Title',
+  width:'200px'
+});
 
     $("#f1").fu_popover({
       autoHide:true,
@@ -213,6 +541,7 @@
       content:'<p style="text-align:center;margin-bottom:5px">Are you sure ?</p><div style="text-align:center"><button style="margin-bottom:0px;background:#ee2b17;color:#fff">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;<button style="margin-bottom:10px;background:#35af45;color:#fff">Cancel</button></div>',
       dismissable:true,
       placement:'top',
+      themeName:'Theme_blue',
       title:'Alert',
       width:'210px'
     });
