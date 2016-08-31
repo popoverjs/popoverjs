@@ -1,5 +1,5 @@
 /* ========================================================================
- * fu_popover v1.1 Beta
+ * fu_popover v1.1.2
  *
  * ========================================================================
  * Copyright 2016 gsreddy.in
@@ -196,17 +196,44 @@
 
     }
 
-    fu_popover.prototype.getOffset = function( e ) {
+// Calculate offsets - for old browsers
+    fu_popover.prototype.getOffsetSum = function(elem) {
+      var top=0, left=0
+      while(elem) {
+        top = top + parseInt(elem.offsetTop)
+        left = left + parseInt(elem.offsetLeft)
+        elem = elem.offsetParent
+      }
 
-      var isNotFirefox = (navigator.userAgent.toLowerCase().indexOf('firefox') == -1);
-    var x = 0, y = 0;
-    while (e) {
-        x += e.offsetLeft - e.scrollLeft + (isNotFirefox ? e.clientLeft : 0);
-        y += e.offsetTop - e.scrollTop + (isNotFirefox ? e.clientTop : 0);
-        e = e.offsetParent;
+      return {top: top, left: left}
     }
-    return { left: x + window.scrollX, top: y + window.scrollY };
-  }
+
+// Calculate offsets
+    fu_popover.prototype.getOffsetRect = function(elem) {
+        var box = elem.getBoundingClientRect()
+
+        var body = document.body
+        var docElem = document.documentElement
+
+        var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop
+        var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft
+
+        var clientTop = docElem.clientTop || body.clientTop || 0
+        var clientLeft = docElem.clientLeft || body.clientLeft || 0
+
+        var top  = box.top +  scrollTop - clientTop
+        var left = box.left + scrollLeft - clientLeft
+
+        return { top: Math.round(top), left: Math.round(left) }
+    }
+
+    fu_popover.prototype.getOffset = function( elem ){
+        if (elem.getBoundingClientRect) {
+            return this.getOffsetRect(elem)
+        } else {
+            return this.getOffsetSum(elem)
+        }
+    }
 
   fu_popover.prototype.setPopupPosition = function(){
 
